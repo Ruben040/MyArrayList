@@ -140,7 +140,7 @@ class MyArrayListTest{
     void deleteAll(){
         myList.deleteAll();
 
-        MyList<String> actual = new MyArrayList<>();
+        MyList<String> actual = new MyArrayList<>(10);
 
         Assertions.assertEquals(myList, actual);
     }
@@ -209,12 +209,7 @@ class MyArrayListTest{
     @Test
     void clear(){
         myList.clear();
-
-        MyList<String> actual = new MyArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            actual.add(null);
-        }
-
+        MyList<String> actual = new MyArrayList<>(0);
         Assertions.assertEquals(myList, actual);
     }
 

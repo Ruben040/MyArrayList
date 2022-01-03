@@ -8,13 +8,13 @@ import java.util.Iterator;
  */
 public class MyIterator<T> implements Iterator<T> {
     private int index;
-    private T[] values;
+    private Object[] values;
 
     /**
      * Initializing an array
      * @param values - array
      */
-    public MyIterator(T[] values) {
+    public MyIterator(Object[] values) {
         this.values = values;
     }
 
@@ -33,6 +33,6 @@ public class MyIterator<T> implements Iterator<T> {
      */
     @Override
     public T next() {
-        return values[index++];
+        return (T) values[index++];
     }
 }
