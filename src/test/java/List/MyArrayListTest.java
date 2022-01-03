@@ -170,7 +170,7 @@ class MyArrayListTest{
 
     @Test
     void isEmpty(){
-        Assertions.assertTrue(myList.isEmpty());
+        Assertions.assertFalse(myList.isEmpty());   
     }
 
     @Test
@@ -209,8 +209,8 @@ class MyArrayListTest{
     @Test
     void clear(){
         myList.clear();
-        MyList<String> actual = new MyArrayList<>(0);
-        Assertions.assertEquals(myList, actual);
+        MyList<String> actual = new MyArrayList<>(10);
+        Assertions.assertEquals(myList, actual);;
     }
 
     @Test
