@@ -138,7 +138,7 @@ public class MyArrayList<T> implements MyList<T>{
      */
     @Override
     public void deleteAll() {
-        array = new Object[DEFAULT_CAPACITY];
+        array = emptyArray;
         lastIndex = 0;
     }
 
@@ -187,7 +187,7 @@ public class MyArrayList<T> implements MyList<T>{
      */
     @Override
     public boolean isEmpty() {
-        return lastIndex > 0;
+        return lastIndex == 0;
     }
 
     /**
@@ -212,7 +212,7 @@ public class MyArrayList<T> implements MyList<T>{
      */
     @Override
     public void clear() {
-        array = emptyArray;
+        array = new Object[array.length];
         lastIndex = 0;
     }
 
@@ -296,7 +296,7 @@ public class MyArrayList<T> implements MyList<T>{
             array = new Object[DEFAULT_CAPACITY];
         }
         if (lastIndex - MAX_CAPACITY == 0){
-            throw new OutOfMemoryError();
+            throw new OutOfMemoryError("Elements count equals max capacity = " + MAX_CAPACITY);
         }
         if (lastIndex >= array.length) {
             array = newCapacity(array);
