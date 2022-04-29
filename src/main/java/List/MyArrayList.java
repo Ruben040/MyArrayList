@@ -1,6 +1,5 @@
 package List;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -46,7 +45,7 @@ public class MyArrayList<T> implements MyList<T>{
     }
 
     /**
-     * Adding an element by index
+     * Adding an elemen
      * @param index - index to add
      * @param obj - element to add
      */
@@ -65,7 +64,7 @@ public class MyArrayList<T> implements MyList<T>{
      * @param list - list to add (NotNull)
      */
     @Override
-    public void addAll(@NotNull MyList<? extends T> list) {
+    public void addAll(MyList<? extends T> list) {
         for (int i = 0; i < list.size(); i++) {
             add(list.get(i));
         }
@@ -79,7 +78,7 @@ public class MyArrayList<T> implements MyList<T>{
      * @param list - list to add (NotNull)
      */
     @Override
-    public void addAll(int index, @NotNull MyList<? extends T> list) {
+    public void addAll(int index, MyList<? extends T> list) {
         for (int i = 0; i < list.size(); i++) {
             add(index++, list.get(i));
         }
@@ -171,7 +170,7 @@ public class MyArrayList<T> implements MyList<T>{
      */
 
     @Override
-    public boolean containsAll(@NotNull MyList<?> list) {
+    public boolean containsAll(MyList<?> list) {
         if (list.size() != 0) {
             for (int i = 0; i < list.size(); i++) {
                 if (!contains(list.get(i))) return false;
